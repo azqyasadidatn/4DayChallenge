@@ -39,13 +39,16 @@ else :
     print ("ERORRRRRRRR HUHUUU TT")
 print(image)
 '''
-# MENGUBAH DAN MENGAKSES PIKSEL TERTENTU
+##############MENGUBAH DAN MENGAKSES PIKSEL TERTENTU##########################
 '''
 cara mengakses nilai BGR dari piksel tunggal, misalnya 
 piksel di koordinat (100, 50). Ini adalah kunci untuk 
 memahami bagaimana cara mengubah warna pada titik tertentu
 di gambar.
 '''
+
+'''
+
 pixel_value = image[100,50]
 
 print(f"Nilai BGR piksel(100,50) : {pixel_value}")
@@ -54,5 +57,18 @@ image[ 700 :900, 200:400] = [0, 200, 100]
 image[700:900, 1000:1200] = [100, 0, 1]
 image[100:300, 1000:1200] = [100, 0, 1]
 cv2.imshow(window_name,image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+'''
+##########################(Region of Interest / ROI)##########################
+'''
+Tujuan dari ROI adalah mengambil sub-array (bagian kecil) dari gambar asli. 
+!! Saat memotong ROI, variabel roi yang baru tetap menjadi array NumPy yang independen !!
+
+'''
+
+roi = image[700:1100, 700:900]
+
+cv2.imshow(window_name, roi)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
