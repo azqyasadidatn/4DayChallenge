@@ -36,7 +36,7 @@ while True :
     if PilihanOperasi == "5" :
         print("Okkey See U deh yaaa")
         break
-    
+
     angka1= float(input("Masukan angka 1 :"))
     angka2= float(input("Masukan angka 2 :"))
     if PilihanOperasi == "1" :
