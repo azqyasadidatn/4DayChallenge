@@ -20,8 +20,8 @@ import cv2
 import numpy
 import os
 
-image = cv2.imread(r'D:\Azqya Old Code 2\PY and NumPy\30 Day Plylist\azqya.jpg')
-# image = cv2.imread(r'D:\Azqya Old Code 2\PY and NumPy\30 Day Plylist\burung.jpg')
+# image = cv2.imread(r'D:\Azqya Old Code 2\PY and NumPy\30 Day Plylist\azqya.jpg')
+image = cv2.imread(r'D:\Azqya Old Code 2\PY and NumPy\30 Day Plylist\burung.jpg')
 # image = os.path.join('D:', 'Azqya Old Code 2', 'PY and NumPy', '30 Day Plylist', 'azqya.jpg')
 # print(image) 
 # # print(image.shape)
@@ -76,12 +76,19 @@ Tujuan dari ROI adalah mengambil sub-array (bagian kecil) dari gambar asli.
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 ##########################   RESIZE  && COLOR  ##########################
-resize_image = cv2.resize(image,(640,480))
+resize_image = cv2.resize(image,(580,540))
 
 img_color = cv2.cvtColor(resize_image, cv2.COLOR_BGR2RGB)
+imgdgry = cv2.cvtColor(resize_image, cv2.COLOR_BGR2GRAY)
 
-cv2.imshow('gambar', img_color)
+# biar bisa manggil 2 windows tab
+cv2.namedWindow('warna', cv2.WINDOW_NORMAL)
+cv2.namedWindow('abu', cv2.WINDOW_NORMAL)
+cv2.namedWindow('asli', cv2.WINDOW_NORMAL)
 
-# cv2.imshow('gambar', resize_image)
+cv2.imshow('warna', img_color)
+cv2.imshow('abu', imgdgry)
+cv2.imshow('asli', image)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
