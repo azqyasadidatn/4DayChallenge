@@ -6,8 +6,8 @@ model= YOLO(model_path)
 WINDOW_NAME = "Frame"
 
 camera = cv2.VideoCapture(0)
-camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 720)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 566)
 while True :
     success,frame = camera.read()
     if not success :
